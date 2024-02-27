@@ -1,0 +1,141 @@
+.imgProduit{
+    width: 100%;
+}
+.small-images{
+    img{
+        height: 80px;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 0.3rem;
+    }
+    .button{
+        position: absolute;
+    }
+}
+// .images{
+//     height: 400px;
+// }
+::ng-deep .owl-item {
+    width: 130px !important; 
+    margin: 1rem;
+}
+
+::ng-deep .owl-carousel{
+    background-color: rgba(241, 238, 238, 0.1);
+    height: 120px;
+}
+.categ{
+    p{
+        color: #333333;
+    }
+}
+
+.tilte{
+    h1{
+        font-size: 20px;
+        font-weight: 600;
+        color: #232323;
+        line-height: 30px ;
+        vertical-align:  baseline;
+        letter-spacing: normal;
+        word-spacing: 0px;
+    }
+}
+.slog {
+    p{
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+.quantite{
+    label{
+      color: #232323;;
+    }
+
+    ::ng-deep p-inputnumber {
+        // border: solid 0.5px #a59f9f;
+        height: 40px;
+        border: solid 0.5px #b3b3b3;
+        border-radius: 1rem;
+    }
+    ::ng-deep p-inputnumber #minmax-buttons{
+        width: 3rem;
+       border: none;
+       text-align: center;
+       font-weight: 600;
+      
+       
+    }
+    ::ng-deep p-inputnumber > span > button.p-element.p-button-icon-only.p-inputnumber-button.p-inputnumber-button-up.p-button.p-component.ng-star-inserted{
+        border: none;
+        background-color: transparent;
+        border-left: solid 0.5px #a59f9f;
+        width: 1.5rem;
+        span{
+            color:  #b3b3b3;
+            font-size: 18px;
+        }
+    }
+    
+    ::ng-deep p-inputnumber > span > button.p-element.p-button-icon-only.p-inputnumber-button.p-inputnumber-button-down.p-button.p-component.ng-star-inserted{
+        border: none;
+        background-color: transparent;
+        border-right: solid 0.5px #b3b3b3;
+        width: 1.5rem;
+        span{
+            color:  #a59f9f;
+        }
+    }
+    
+}
+
+.price{
+    h1{
+        font-size: 34px;
+        font-weight: 600;
+        color: #f59a57;
+    }
+}
+
+.slog{
+    p{
+        font-size: 15px;
+        font-weight: 400;
+        color: #777777;
+    }
+}
+
+
+.add{
+    .panier{
+  
+            padding: 0.7rem 2rem;
+            border: none;
+            color: white;
+            background-color: #f59a57;
+            border-radius: 1rem;
+            margin-inline-end: 0.3rem;
+            margin-inline-start: 0.3rem;
+            font-size: 13px;
+            font-weight: 600;
+
+    }
+    .panier:hover{
+        transition: 0.5s;
+        background-color: #e08646;
+    }
+    .buy{
+            padding: 0.7rem 2rem;
+            border: none;
+            color: white;
+            background-color: #232323;
+            border-radius: 1rem;
+            margin-inline-start: 0.3rem;
+            font-size: 13px;
+            font-weight: 600;
+    }
+    .buy:hover{
+        transition: 0.5s;
+        background-color: #333333;
+    }
+}

@@ -1,0 +1,108 @@
+<div class="container mt-8 " *ngIf="selectedProduit">
+   <div class="d-flex">
+    <div class="col-md-7 " >
+        <div class="imgProduit">  
+            <div class="images">
+                <p-galleria
+                  #galleria
+                  [value]="selectedProduit.contenueMediaAssocie"
+                  [(activeIndex)]="activeIndex"
+                  [numVisible]="5"
+                  [showThumbnails]="showThumbnails"
+                  [showItemNavigators]="true"
+                  [showItemNavigatorsOnHover]="true"
+                  [circular]="true"
+                  [autoPlay]="false"
+                  [transitionInterval]="3000"
+                  [containerStyle]="{ 'max-width': '100%' }"
+                  [containerClass]="galleriaClass()"
+                  >
+                  <ng-template pTemplate="item" let-item>
+                    <div class="image" [ngClass]="{'fixed-height': !fullscreen}">
+                      <img [src]="item.file" style="height: 500px ;border-radius: 0.5rem; object-fit: cover;" [ngStyle]="{ width: !fullscreen ? '90%' : '', }" (click)="toggleFullScreen()"/>
+                    </div>
+                  </ng-template>
+                </p-galleria>
+              </div>
+              
+            <div class="small-images">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let image of selectedProduit.contenueMediaAssocie; let index = index">
+                      <ng-template carouselSlide [id]="image._id" class="cont">
+                        <img [src]="image.file" [alt]="image.lienContenu" style="cursor: pointer ," (click)="imageClick(index)" />
+                      </ng-template>
+                    </ng-container>
+                  </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="categ">
+            <p>{{selectedProduit.categorieProduit}}</p>
+        </div>
+        <div class="tilte">
+            <h1>{{selectedProduit.translations.designationProduit}} </h1>
+        </div>
+        <div class="price">
+            <h1>{{selectedProduit.tarifUHTPardefaut}} <span>{{selectedProduit.monnaie}}</span></h1>
+        </div>
+        <div class="slog">
+            <p>{{selectedProduit.translations.slogan}}</p>
+        </div>
+        <div class="quantite ">
+            <div class="flex-auto mt-2">
+                <label class="mb-2 block font-bold" for="minmax-buttons">{{'code_555' | translate | titlecase}}</label>
+               <div class="d-flex align-items-center">
+                
+                 <div class="add d-flex align-items-center justify-content-center mt-1">
+                    <p-inputNumber mode="decimal" 
+                    [showButtons]="true" 
+                    inputId="minmax-buttons" 
+                    [min]="selectedProduit.qteMinParCommande"
+                    [step]="1"
+                    [max]="selectedProduit.qteMaxParCommande"
+                    buttonLayout="horizontal"
+                    spinnerMode="horizontal"
+                    incrementButtonIcon="pi pi-plus"
+                    decrementButtonIcon="pi pi-minus"
+                     ></p-inputNumber>
+                     <button class="panier">{{'code_556' | translate | titlecase}}</button>
+                     <button class="buy">{{'code_557' | translate | titlecase}}</button>
+                 </div>
+               </div>
+            </div>
+        </div>
+      
+        <!-- <div class="tags flex align-items-center gap-2 flex-wrap">
+            <h1>{{'code_558' | translate | titlecase}}</h1>
+            <div *ngFor="let tag of selectedProduit.translations.tags">
+                <p-chip label="{{tag}}"></p-chip>
+            </div>
+        </div> -->
+    </div>
+   </div>
+
+   <ul class="nav nav-tabs mt-4" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="simple-tab-0" data-bs-toggle="tab" href="#simple-tabpanel-0" role="tab" aria-controls="simple-tabpanel-0" aria-selected="true">{{'code_412' | translate | titlecase}}</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="simple-tab-1" data-bs-toggle="tab" href="#simple-tabpanel-1" role="tab" aria-controls="simple-tabpanel-1" aria-selected="false">more photos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="simple-tab-2" data-bs-toggle="tab" href="#simple-tabpanel-2" role="tab" aria-controls="simple-tabpanel-2" aria-selected="false">specifications</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="simple-tab-2" data-bs-toggle="tab" href="#simple-tabpanel-3" role="tab" aria-controls="simple-tabpanel-3" aria-selected="false">Customer ratings & reviews</a>
+      </li>
+  </ul>
+  <div class="tab-content pt-5" id="tab-content">
+    <div class="tab-pane active" id="simple-tabpanel-0" role="tabpanel" aria-labelledby="simple-tab-0">Tab 1 selected</div>
+    <div class="tab-pane" id="simple-tabpanel-1" role="tabpanel" aria-labelledby="simple-tab-1">Tab 2 selected</div>
+    <div class="tab-pane" id="simple-tabpanel-2" role="tabpanel" aria-labelledby="simple-tab-2">Tab 3 selected</div>
+    <div class="tab-pane" id="simple-tabpanel-3" role="tabpanel" aria-labelledby="simple-tab-3">Tab 4 selected</div>
+  </div>
+    
+</div>
+
+

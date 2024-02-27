@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "~primeicons/primeicons.css";
+@import "~primeflex/primeflex.css";
+@import "~primeng/resources/themes/fluent-light/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import '~leaflet/dist/leaflet.css';
+@import '~leaflet-fullscreen/dist/leaflet.fullscreen.css';
+
+
+/* You can add global styles to this file, and also import other style files */
+
+@import 'flatpickr/dist/flatpickr.css';
+
+/* PrimeNG */
+
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import 'primeflex/primeflex.scss';
+
+@import "../node_modules/primeicons/primeicons.css";
+@import "primeicons/primeicons.css";
+@import "~dropzone/dist/dropzone.css";
+@import '~leaflet/dist/leaflet.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import 'leaflet/dist/leaflet.css';
+
+
+
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@for $i from 1 through 100 {
+
+  #pn_id_#{$i} > div > ul{
+    display: none;
+  }
+}
+
